@@ -1,0 +1,55 @@
+{
+  "package": {
+    "description": "请在这里完善组件说明",
+    "main": "dist/index.js",
+    "module": "dist/index.modern.js",
+    "source": "src/index.js",
+    "scripts": {
+      "init": "cd example &&npm i --legacy-peer-deps && node scripts/init.js",
+      "start": "run-p start:lib start:md start:example",
+      "build": "run-s build:lib build:md build:example",
+      "build:lib": "microbundle --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
+      "build:md": "create-md",
+      "start:md": "create-md --watch",
+      "start:lib": "microbundle watch --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
+      "test": "run-s test:unit test:lint test:build",
+      "test:build": "run-s build",
+      "test:lint": "eslint .",
+      "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+      "test:watch": "react-scripts test --env=jsdom",
+      "build:example": "cd example && npm run build",
+      "start:example": "cd example && npm run start",
+      "deploy": "gh-pages -d example/build",
+      "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+        "prettier --config .prettierrc --write",
+        "git add"
+      ]
+    },
+    "files": [
+      "dist"
+    ],
+    "devDependencies": {
+      "@kne/md-doc": "^0.1.2",
+      "cross-env": "^7.0.3",
+      "gh-pages": "^3.2.3",
+      "husky": "^7.0.4",
+      "@kne/microbundle": "^0.15.2",
+      "npm-run-all": "^4.1.5",
+      "prettier": "^2.5.1"
+    },
+    "eslintConfig": {
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
+    }
+  }
+}
