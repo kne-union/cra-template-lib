@@ -10,9 +10,12 @@ const path = require("path");
         "react": "file:../node_modules/react",
         "react-dom": "file:../node_modules/react-dom"
     });
+    packageJson.syntax = {
+        esmodules: true
+    };
     await fs.writeJson(path.resolve(__dirname, "../package.json"), packageJson);
-    await spawn("npm", ["i"], {stdio: 'inherit'});
-    await spawn("npm", ["i", "node-sass", "--save-dev"], {stdio: 'inherit'});
+    await spawn("npm", ["i", '--legacy-peer-deps'], {stdio: 'inherit'});
+    await spawn("npm", ["i", "node-sass", "--save-dev", "--legacy-peer-deps"], {stdio: 'inherit'});
 })().catch((e) => {
     console.error(e);
 });

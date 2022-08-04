@@ -1,6 +1,9 @@
 {
   "package": {
     "description": "请在这里完善组件说明",
+    "syntax": {
+      "esmodules": true
+    },
     "main": "dist/index.js",
     "module": "dist/index.modern.js",
     "source": "src/index.js",
@@ -37,7 +40,7 @@
       "dist"
     ],
     "devDependencies": {
-      "@kne/md-doc": "^0.1.2",
+      "@kne/md-doc": "^0.1.6",
       "cross-env": "^7.0.3",
       "gh-pages": "^3.2.3",
       "husky": "^7.0.4",

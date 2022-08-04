@@ -21,7 +21,7 @@
   ],
   "devDependencies": {
     "@craco/craco": "^6.4.5",
-    "@kne/md-doc": "^0.1.2",
+    "@kne/md-doc": "^0.1.6",
     "chokidar": "^3.5.3",
     "cross-spawn-promise": "^0.10.2",
     "fs-extra": "^10.1.0",
