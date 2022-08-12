@@ -8,7 +8,7 @@
     "module": "dist/index.modern.js",
     "source": "src/index.js",
     "scripts": {
-      "init": "cd example &&npm i --legacy-peer-deps && node scripts/init.js",
+      "init": "npm i --save-dev --legacy-peer-deps node-sass && cd example &&npm i --legacy-peer-deps && node scripts/init.js",
       "start": "run-p start:lib start:md start:example",
       "build": "run-s build:lib build:md build:example",
       "build:lib": "microbundle --no-compress --format modern,cjs --jsx React.createElement --jsxFragment React.Fragment",
