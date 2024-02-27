@@ -19,12 +19,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
 
-      - name: Install 🔧
-        run: npm install --legacy-peer-deps
-
-      - name: Build 🏗️
-        run: npm run build:lib
-
       - name: Publish Npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.KNE_PACKAGE_PUBLISH}}
