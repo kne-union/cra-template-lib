@@ -4,7 +4,8 @@
   "keywords": [
     "react",
     "create-react-app",
-    "template"
+    "template",
+    "npm"
   ],
   "description": " 初始化一个标准的库模版.",
   "repository": {
